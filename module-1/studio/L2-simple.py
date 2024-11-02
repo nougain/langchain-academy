@@ -47,3 +47,6 @@ builder.add_edge("node_3", END)
 
 # Compile graph
 graph = builder.compile()
+
+result = graph.invoke({"graph_state" : "Hi, this is Ramesh."})
+print(result)

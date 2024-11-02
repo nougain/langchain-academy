@@ -1,6 +1,5 @@
-from langchain_core.messages import SystemMessage
+from langchain_core.messages import SystemMessage, HumanMessage
 from langchain_openai import ChatOpenAI
-
 from langgraph.graph import START, StateGraph, MessagesState
 from langgraph.prebuilt import tools_condition, ToolNode
 
@@ -48,6 +47,7 @@ def assistant(state: MessagesState):
 builder = StateGraph(MessagesState)
 builder.add_node("assistant", assistant)
 builder.add_node("tools", ToolNode(tools))
+
 builder.add_edge(START, "assistant")
 builder.add_conditional_edges(
     "assistant",
@@ -58,4 +58,22 @@ builder.add_conditional_edges(
 builder.add_edge("tools", "assistant")
 
 # Compile graph
-graph = builder.compile()
+########################################################
+from langgraph.checkpoint.memory import MemorySaver
+react_graph = builder.compile(checkpointer=MemorySaver())
+# Specify a thread
+config = {"configurable": {"thread_id": "1"}}
+########################################################
+
+# Execution
+messages = [HumanMessage(content="Add 3 and 4")]
+messages = react_graph.invoke({"messages": messages}, config)
+for m in messages['messages']:
+    m.pretty_print()
+
+messages = [HumanMessage(content="Multiply that with -3")]
+messages = react_graph.invoke({"messages": messages}, config)
+for m in messages['messages']:
+    m.pretty_print()
+
+# Wow!
