@@ -60,10 +60,10 @@ builder.add_edge("tools", "assistant")
 ########################################################
 
 # Compile graph
-react_graph = builder.compile()
+graph = builder.compile()
 
 # Execution
 messages = [HumanMessage(content="Add 3 and 4. Multiply the output by 2. Divide the output by 5.")]
-messages = react_graph.invoke({"messages": messages})
+messages = graph.invoke({"messages": messages})
 for m in messages['messages']:
     m.pretty_print()
