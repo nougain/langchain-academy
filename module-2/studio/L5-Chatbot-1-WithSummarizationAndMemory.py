@@ -1,3 +1,7 @@
+# ------------------------------------------------------------------------------------------------------
+# Chatbot with memory, supporting long-running conversations without incurring high token cost / latency.
+# ------------------------------------------------------------------------------------------------------
+
 ###
 ### LLM MODEL ###
 ###
@@ -31,7 +35,7 @@ def call_model(state: State):
     else:
         messages = state["messages"]
 
-    response = model.invoke(messages, {"tags": ["RCNTag-Chatbot."], "metadata": {"RCNKey1":len(messages)}})
+    response = model.invoke(messages, {"tags": ["RCNTag-Chatbot!1"], "metadata": {"RCNKey1":len(messages)}})
     return {"messages": response}
 
 
@@ -54,7 +58,7 @@ def summarize_conversation(state: State):
 
     # Add prompt to our history
     messages = state["messages"] + [HumanMessage(content=summary_message)]
-    response = model.invoke(messages, {"tags": ["RCNTag-Chatbot.."], "metadata": {"RCNKey1":len(messages)}})
+    response = model.invoke(messages, {"tags": ["RCNTag-Chatbot!2"], "metadata": {"RCNKey1":len(messages)}})
 
     # Delete all but the 2 most recent messages
     delete_messages = [RemoveMessage(id=m.id) for m in state["messages"][:-2]]
@@ -65,7 +69,7 @@ def summarize_conversation(state: State):
 ### Next Node ###
 ###
 from langgraph.graph import END
-# Determine whether to end or summarize the conversation
+# Determine whether to end or summarize the conversation i.e. which node to go to
 def should_continue(state: State):
     """Return the next node to execute."""
 
@@ -75,6 +79,7 @@ def should_continue(state: State):
     # If there are more than six messages, then we summarize the conversation
     print("Number of messages in the conversation: " +str(len(messages)))
     if len(messages) > 6:
+        print("----------->beep-beep-beep-beep Returning the \"summarize_conversation\" node...")
         return "summarize_conversation"
 
     # Otherwise we can just end
@@ -91,7 +96,7 @@ from langgraph.graph import StateGraph, START
 # Define a new graph
 workflow = StateGraph(State)
 workflow.add_node("conversation", call_model)
-workflow.add_node(summarize_conversation)
+workflow.add_node("summarize_conversation", summarize_conversation)
 
 # Set the entrypoint as conversation
 workflow.add_edge(START, "conversation")
@@ -108,21 +113,45 @@ graph = workflow.compile(checkpointer=memory)
 # Start conversation
 print("................................Conversation-1...................................................")
 input_message = HumanMessage(content="hi! I'm Ramesh")
-config = {"configurable": {"thread_id": "1"}, "tags": ["RCNTag-Chatbot..."], "metadata": {"RCNKey1":"Conv1"}}
+config = {"configurable": {"thread_id": "1"}, "tags": ["RCNTag-Chatbot!3"], "metadata": {"RCNKey1":"Conv1"}}
 output = graph.invoke({"messages": [input_message]}, config)
 for m in output['messages'][-1:]:
     m.pretty_print()
+brief = graph.get_state(config).values.get("summary","")
+print("SUMMARY: " + brief)
 
 print("................................Conversation-2...................................................")
 input_message = HumanMessage(content="what's my name?")
-config = {"configurable": {"thread_id": "1"}, "tags": ["RCNTag-Chatbot...."], "metadata": {"RCNKey1":"Conv2"}}
+config = {"configurable": {"thread_id": "1"}, "tags": ["RCNTag-Chatbot!4"], "metadata": {"RCNKey1":"Conv2"}}
 output = graph.invoke({"messages": [input_message]}, config)
 for m in output['messages'][-1:]:
     m.pretty_print()
+brief = graph.get_state(config).values.get("summary","")
+print("SUMMARY: " + brief)
 
 print("................................Conversation-3...................................................")
-input_message = HumanMessage(content="i like the 49ers!")
-config = {"configurable": {"thread_id": "1"}, "tags": ["RCNTag-Chatbot....."], "metadata": {"RCNKey1":"Conv3"}}
+input_message = HumanMessage(content="I like the man made ancient wonders!")
+config = {"configurable": {"thread_id": "1"}, "tags": ["RCNTag-Chatbot!5"], "metadata": {"RCNKey1":"Conv3"}}
 output = graph.invoke({"messages": [input_message]}, config)
 for m in output['messages'][-1:]:
     m.pretty_print()
+brief = graph.get_state(config).values.get("summary","")
+print("SUMMARY: " + brief)
+
+print("................................Conversation-4...................................................")
+input_message = HumanMessage(content="Tell me about the pyramid of khufru!")
+config = {"configurable": {"thread_id": "1"}, "tags": ["RCNTag-Chatbot!6"], "metadata": {"RCNKey1":"Conv4"}}
+output = graph.invoke({"messages": [input_message]}, config)
+for m in output['messages'][-1:]:
+    m.pretty_print()
+brief = graph.get_state(config).values.get("summary","")
+print("SUMMARY: " + brief)
+
+print("................................Conversation-5...................................................")
+input_message = HumanMessage(content="Is it the largest one?")
+config = {"configurable": {"thread_id": "1"}, "tags": ["RCNTag-Chatbot!7"], "metadata": {"RCNKey1":"Conv5"}}
+output = graph.invoke({"messages": [input_message]}, config)
+for m in output['messages'][-1:]:
+    m.pretty_print()
+brief = graph.get_state(config).values.get("summary","")
+print("SUMMARY: " + brief)

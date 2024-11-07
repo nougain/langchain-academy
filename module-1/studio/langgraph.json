@@ -3,7 +3,8 @@
   "graphs": {
     "simple_graph": "./L2-simple.py:graph",
     "router": "./L5-router.py:graph",
-    "agent": "./L6-agent.py:graph"
+    "agent": "./L6-agent.py:graph",
+    "chatbot": "./chatbot.py:graph"
   },
   "env": "./.env",
   "python_version": "3.11",
