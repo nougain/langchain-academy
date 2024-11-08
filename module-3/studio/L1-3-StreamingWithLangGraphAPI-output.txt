@@ -1,0 +1,130 @@
+D:\Work\RPA\15-Langchain\langchain-academy\lc-academy-env\Scripts\python.exe D:\Work\RPA\15-Langchain\langchain-academy\module-3\studio\L1-3-StreamingWithLangGraphAPI.py 
+---event:1-------------
+StreamPart(event='metadata', data={'run_id': '1ef9d82a-6ae6-6fcc-b814-4fc1bd4c77cc', 'attempt': 1})
+---event:2-------------
+StreamPart(event='values', data={'messages': [{'content': 'Multiply 2 and 3', 'additional_kwargs': {'example': False, 'additional_kwargs': {}, 'response_metadata': {}}, 'response_metadata': {}, 'type': 'human', 'name': None, 'id': '3595ab35-4daa-49c9-a723-cf11216b3126', 'example': False}]})
+---event:3-------------
+StreamPart(event='values', data={'messages': [{'content': 'Multiply 2 and 3', 'additional_kwargs': {'example': False, 'additional_kwargs': {}, 'response_metadata': {}}, 'response_metadata': {}, 'type': 'human', 'name': None, 'id': '3595ab35-4daa-49c9-a723-cf11216b3126', 'example': False}, {'content': '', 'additional_kwargs': {'tool_calls': [{'id': 'call_wwoesNXcinQzlG02us2FQJ99', 'function': {'arguments': '{"a":2,"b":3}', 'name': 'multiply'}, 'type': 'function'}], 'refusal': None}, 'response_metadata': {'token_usage': {'completion_tokens': 17, 'prompt_tokens': 134, 'total_tokens': 151, 'completion_tokens_details': {'accepted_prediction_tokens': 0, 'audio_tokens': 0, 'reasoning_tokens': 0, 'rejected_prediction_tokens': 0}, 'prompt_tokens_details': {'audio_tokens': 0, 'cached_tokens': 0}}, 'model_name': 'gpt-4o-2024-08-06', 'system_fingerprint': 'fp_159d8341cc', 'finish_reason': 'tool_calls', 'logprobs': None}, 'type': 'ai', 'name': None, 'id': 'run-106d7b19-ab4f-4616-aa5f-939fd3804a48-0', 'example': False, 'tool_calls': [{'name': 'multiply', 'args': {'a': 2, 'b': 3}, 'id': 'call_wwoesNXcinQzlG02us2FQJ99', 'type': 'tool_call'}], 'invalid_tool_calls': [], 'usage_metadata': {'input_tokens': 134, 'output_tokens': 17, 'total_tokens': 151, 'input_token_details': {'audio': 0, 'cache_read': 0}, 'output_token_details': {'audio': 0, 'reasoning': 0}}}]})
+---event:4-------------
+StreamPart(event='values', data={'messages': [{'content': 'Multiply 2 and 3', 'additional_kwargs': {'example': False, 'additional_kwargs': {}, 'response_metadata': {}}, 'response_metadata': {}, 'type': 'human', 'name': None, 'id': '3595ab35-4daa-49c9-a723-cf11216b3126', 'example': False}, {'content': '', 'additional_kwargs': {'tool_calls': [{'id': 'call_wwoesNXcinQzlG02us2FQJ99', 'function': {'arguments': '{"a":2,"b":3}', 'name': 'multiply'}, 'type': 'function'}], 'refusal': None}, 'response_metadata': {'token_usage': {'completion_tokens': 17, 'prompt_tokens': 134, 'total_tokens': 151, 'completion_tokens_details': {'accepted_prediction_tokens': 0, 'audio_tokens': 0, 'reasoning_tokens': 0, 'rejected_prediction_tokens': 0}, 'prompt_tokens_details': {'audio_tokens': 0, 'cached_tokens': 0}}, 'model_name': 'gpt-4o-2024-08-06', 'system_fingerprint': 'fp_159d8341cc', 'finish_reason': 'tool_calls', 'logprobs': None}, 'type': 'ai', 'name': None, 'id': 'run-106d7b19-ab4f-4616-aa5f-939fd3804a48-0', 'example': False, 'tool_calls': [{'name': 'multiply', 'args': {'a': 2, 'b': 3}, 'id': 'call_wwoesNXcinQzlG02us2FQJ99', 'type': 'tool_call'}], 'invalid_tool_calls': [], 'usage_metadata': {'input_tokens': 134, 'output_tokens': 17, 'total_tokens': 151, 'input_token_details': {'audio': 0, 'cache_read': 0}, 'output_token_details': {'audio': 0, 'reasoning': 0}}}, {'content': '6', 'additional_kwargs': {}, 'response_metadata': {}, 'type': 'tool', 'name': 'multiply', 'id': 'e72d2dcf-1edc-46c9-96a6-30481823adad', 'tool_call_id': 'call_wwoesNXcinQzlG02us2FQJ99', 'artifact': None, 'status': 'success'}]})
+---event:5-------------
+StreamPart(event='values', data={'messages': [{'content': 'Multiply 2 and 3', 'additional_kwargs': {'example': False, 'additional_kwargs': {}, 'response_metadata': {}}, 'response_metadata': {}, 'type': 'human', 'name': None, 'id': '3595ab35-4daa-49c9-a723-cf11216b3126', 'example': False}, {'content': '', 'additional_kwargs': {'tool_calls': [{'id': 'call_wwoesNXcinQzlG02us2FQJ99', 'function': {'arguments': '{"a":2,"b":3}', 'name': 'multiply'}, 'type': 'function'}], 'refusal': None}, 'response_metadata': {'token_usage': {'completion_tokens': 17, 'prompt_tokens': 134, 'total_tokens': 151, 'completion_tokens_details': {'accepted_prediction_tokens': 0, 'audio_tokens': 0, 'reasoning_tokens': 0, 'rejected_prediction_tokens': 0}, 'prompt_tokens_details': {'audio_tokens': 0, 'cached_tokens': 0}}, 'model_name': 'gpt-4o-2024-08-06', 'system_fingerprint': 'fp_159d8341cc', 'finish_reason': 'tool_calls', 'logprobs': None}, 'type': 'ai', 'name': None, 'id': 'run-106d7b19-ab4f-4616-aa5f-939fd3804a48-0', 'example': False, 'tool_calls': [{'name': 'multiply', 'args': {'a': 2, 'b': 3}, 'id': 'call_wwoesNXcinQzlG02us2FQJ99', 'type': 'tool_call'}], 'invalid_tool_calls': [], 'usage_metadata': {'input_tokens': 134, 'output_tokens': 17, 'total_tokens': 151, 'input_token_details': {'audio': 0, 'cache_read': 0}, 'output_token_details': {'audio': 0, 'reasoning': 0}}}, {'content': '6', 'additional_kwargs': {}, 'response_metadata': {}, 'type': 'tool', 'name': 'multiply', 'id': 'e72d2dcf-1edc-46c9-96a6-30481823adad', 'tool_call_id': 'call_wwoesNXcinQzlG02us2FQJ99', 'artifact': None, 'status': 'success'}, {'content': 'The result of multiplying 2 and 3 is 6.', 'additional_kwargs': {'refusal': None}, 'response_metadata': {'token_usage': {'completion_tokens': 14, 'prompt_tokens': 159, 'total_tokens': 173, 'completion_tokens_details': {'accepted_prediction_tokens': 0, 'audio_tokens': 0, 'reasoning_tokens': 0, 'rejected_prediction_tokens': 0}, 'prompt_tokens_details': {'audio_tokens': 0, 'cached_tokens': 0}}, 'model_name': 'gpt-4o-2024-08-06', 'system_fingerprint': 'fp_159d8341cc', 'finish_reason': 'stop', 'logprobs': None}, 'type': 'ai', 'name': None, 'id': 'run-e6bc6328-219b-40ab-931d-169a11052b3c-0', 'example': False, 'tool_calls': [], 'invalid_tool_calls': [], 'usage_metadata': {'input_tokens': 159, 'output_tokens': 14, 'total_tokens': 173, 'input_token_details': {'audio': 0, 'cache_read': 0}, 'output_token_details': {'audio': 0, 'reasoning': 0}}}]})
+========================================================
+
+..........................
+content='Multiply 2 and 3' additional_kwargs={'additional_kwargs': {'example': False, 'additional_kwargs': {}, 'response_metadata': {}}, 'response_metadata': {}, 'example': False} response_metadata={} id='3595ab35-4daa-49c9-a723-cf11216b3126'
+..........................
+content='' additional_kwargs={'additional_kwargs': {'tool_calls': [{'id': 'call_wwoesNXcinQzlG02us2FQJ99', 'function': {'arguments': '{"a":2,"b":3}', 'name': 'multiply'}, 'type': 'function'}], 'refusal': None}, 'response_metadata': {'token_usage': {'completion_tokens': 17, 'prompt_tokens': 134, 'total_tokens': 151, 'completion_tokens_details': {'accepted_prediction_tokens': 0, 'audio_tokens': 0, 'reasoning_tokens': 0, 'rejected_prediction_tokens': 0}, 'prompt_tokens_details': {'audio_tokens': 0, 'cached_tokens': 0}}, 'model_name': 'gpt-4o-2024-08-06', 'system_fingerprint': 'fp_159d8341cc', 'finish_reason': 'tool_calls', 'logprobs': None}, 'example': False, 'invalid_tool_calls': [], 'usage_metadata': {'input_tokens': 134, 'output_tokens': 17, 'total_tokens': 151, 'input_token_details': {'audio': 0, 'cache_read': 0}, 'output_token_details': {'audio': 0, 'reasoning': 0}}} response_metadata={} id='run-106d7b19-ab4f-4616-aa5f-939fd3804a48-0' tool_calls=[{'name': 'multiply', 'args': {'a': 2, 'b': 3}, 'id': 'call_wwoesNXcinQzlG02us2FQJ99', 'type': 'tool_call'}]
+..........................
+content='6' name='multiply' id='e72d2dcf-1edc-46c9-96a6-30481823adad' tool_call_id='call_wwoesNXcinQzlG02us2FQJ99'
+..........................
+content='The result of multiplying 2 and 3 is 6.' additional_kwargs={'additional_kwargs': {'refusal': None}, 'response_metadata': {'token_usage': {'completion_tokens': 14, 'prompt_tokens': 159, 'total_tokens': 173, 'completion_tokens_details': {'accepted_prediction_tokens': 0, 'audio_tokens': 0, 'reasoning_tokens': 0, 'rejected_prediction_tokens': 0}, 'prompt_tokens_details': {'audio_tokens': 0, 'cached_tokens': 0}}, 'model_name': 'gpt-4o-2024-08-06', 'system_fingerprint': 'fp_159d8341cc', 'finish_reason': 'stop', 'logprobs': None}, 'example': False, 'invalid_tool_calls': [], 'usage_metadata': {'input_tokens': 159, 'output_tokens': 14, 'total_tokens': 173, 'input_token_details': {'audio': 0, 'cache_read': 0}, 'output_token_details': {'audio': 0, 'reasoning': 0}}} response_metadata={} id='run-e6bc6328-219b-40ab-931d-169a11052b3c-0'
+========================================================
+metadata
+messages/metadata
+messages/partial
+messages/partial
+messages/partial
+messages/partial
+messages/partial
+messages/partial
+messages/partial
+messages/partial
+messages/partial
+messages/partial
+messages/partial
+messages/metadata
+messages/complete
+messages/metadata
+messages/partial
+messages/partial
+messages/partial
+messages/partial
+messages/partial
+messages/partial
+messages/partial
+messages/partial
+messages/partial
+messages/partial
+messages/partial
+messages/partial
+messages/partial
+messages/partial
+messages/partial
+========================================================
+Metadata: Run ID - {'run_id': '1ef9d82a-8d9d-684f-8140-2b552b6ec275', 'attempt': 1}
+--------------------------------------------------
+messages/Metadata: {'run-b803f9c7-182e-4078-a11c-9267a306ab5b': {'metadata': {'graph_id': '3-agent', 'created_by': 'system', 'run_attempt': 1, 'langgraph_version': '0.2.45', 'langgraph_plan': 'developer', 'langgraph_host': 'self-hosted', 'run_id': '1ef9d82a-8d9d-684f-8140-2b552b6ec275', 'user_id': '', 'thread_id': '676a8c36-46de-42e3-a393-8b873a2692f4', 'assistant_id': '5c484174-878e-5229-84d2-cd2dcff746d0', 'langgraph_step': 11, 'langgraph_node': 'assistant', 'langgraph_triggers': ['start:assistant'], 'langgraph_path': ['__pregel_pull', 'assistant'], 'langgraph_checkpoint_ns': 'assistant:1a02bc85-8d4f-8d3f-e011-125a9e96d982', 'checkpoint_ns': 'assistant:1a02bc85-8d4f-8d3f-e011-125a9e96d982', 'ls_provider': 'openai', 'ls_model_name': 'gpt-4o', 'ls_model_type': 'chat', 'ls_temperature': 0.7}}}
+--------------------------------------------------
+Tool Calls:
+Tool Call ID: call_IOrsXKds8vf6mcIfwSbdARdF, Function: multiply, Arguments: {}
+--------------------------------------------------
+Tool Calls:
+Tool Call ID: call_IOrsXKds8vf6mcIfwSbdARdF, Function: multiply, Arguments: {}
+--------------------------------------------------
+Tool Calls:
+Tool Call ID: call_IOrsXKds8vf6mcIfwSbdARdF, Function: multiply, Arguments: {}
+--------------------------------------------------
+Tool Calls:
+Tool Call ID: call_IOrsXKds8vf6mcIfwSbdARdF, Function: multiply, Arguments: {}
+--------------------------------------------------
+Tool Calls:
+Tool Call ID: call_IOrsXKds8vf6mcIfwSbdARdF, Function: multiply, Arguments: {'a': 2}
+--------------------------------------------------
+Tool Calls:
+Tool Call ID: call_IOrsXKds8vf6mcIfwSbdARdF, Function: multiply, Arguments: {'a': 2}
+--------------------------------------------------
+Tool Calls:
+Tool Call ID: call_IOrsXKds8vf6mcIfwSbdARdF, Function: multiply, Arguments: {'a': 2}
+--------------------------------------------------
+Tool Calls:
+Tool Call ID: call_IOrsXKds8vf6mcIfwSbdARdF, Function: multiply, Arguments: {'a': 2}
+--------------------------------------------------
+Tool Calls:
+Tool Call ID: call_IOrsXKds8vf6mcIfwSbdARdF, Function: multiply, Arguments: {'a': 2, 'b': 3}
+--------------------------------------------------
+Tool Calls:
+Tool Call ID: call_IOrsXKds8vf6mcIfwSbdARdF, Function: multiply, Arguments: {'a': 2, 'b': 3}
+--------------------------------------------------
+Tool Calls:
+Tool Call ID: call_IOrsXKds8vf6mcIfwSbdARdF, Function: multiply, Arguments: {'a': 2, 'b': 3}
+Response Metadata: Finish Reason - tool_calls
+--------------------------------------------------
+messages/Metadata: {'825c1bac-0cb5-47dc-8792-5738f64f7c44': {'metadata': {'graph_id': '3-agent', 'created_by': 'system', 'run_attempt': 1, 'langgraph_version': '0.2.45', 'langgraph_plan': 'developer', 'langgraph_host': 'self-hosted', 'run_id': '1ef9d82a-8d9d-684f-8140-2b552b6ec275', 'user_id': '', 'thread_id': '676a8c36-46de-42e3-a393-8b873a2692f4', 'assistant_id': '5c484174-878e-5229-84d2-cd2dcff746d0', 'langgraph_step': 12, 'langgraph_node': 'tools', 'langgraph_triggers': ['branch:assistant:tools_condition:tools'], 'langgraph_path': ['__pregel_pull', 'tools'], 'langgraph_checkpoint_ns': 'tools:d76735e5-8b7e-2be2-dbe0-074187b3e830'}}}
+--------------------------------------------------
+messages/complete: [{'content': '6', 'additional_kwargs': {}, 'response_metadata': {}, 'type': 'tool', 'name': 'multiply', 'id': '825c1bac-0cb5-47dc-8792-5738f64f7c44', 'tool_call_id': 'call_IOrsXKds8vf6mcIfwSbdARdF', 'artifact': None, 'status': 'success'}]
+--------------------------------------------------
+messages/Metadata: {'run-8fb37316-1070-469b-8085-79220bfd12f8': {'metadata': {'graph_id': '3-agent', 'created_by': 'system', 'run_attempt': 1, 'langgraph_version': '0.2.45', 'langgraph_plan': 'developer', 'langgraph_host': 'self-hosted', 'run_id': '1ef9d82a-8d9d-684f-8140-2b552b6ec275', 'user_id': '', 'thread_id': '676a8c36-46de-42e3-a393-8b873a2692f4', 'assistant_id': '5c484174-878e-5229-84d2-cd2dcff746d0', 'langgraph_step': 13, 'langgraph_node': 'assistant', 'langgraph_triggers': ['tools'], 'langgraph_path': ['__pregel_pull', 'assistant'], 'langgraph_checkpoint_ns': 'assistant:da79c376-857b-4c5a-701d-fdfce48a0ccf', 'checkpoint_ns': 'assistant:da79c376-857b-4c5a-701d-fdfce48a0ccf', 'ls_provider': 'openai', 'ls_model_name': 'gpt-4o', 'ls_model_type': 'chat', 'ls_temperature': 0.7}}}
+--------------------------------------------------
+--------------------------------------------------
+AI: The
+--------------------------------------------------
+AI: The result
+--------------------------------------------------
+AI: The result of
+--------------------------------------------------
+AI: The result of multiplying
+--------------------------------------------------
+AI: The result of multiplying 
+--------------------------------------------------
+AI: The result of multiplying 2
+--------------------------------------------------
+AI: The result of multiplying 2 and
+--------------------------------------------------
+AI: The result of multiplying 2 and 
+--------------------------------------------------
+AI: The result of multiplying 2 and 3
+--------------------------------------------------
+AI: The result of multiplying 2 and 3 is
+--------------------------------------------------
+AI: The result of multiplying 2 and 3 is 
+--------------------------------------------------
+AI: The result of multiplying 2 and 3 is 6
+--------------------------------------------------
+AI: The result of multiplying 2 and 3 is 6.
+--------------------------------------------------
+AI: The result of multiplying 2 and 3 is 6.
+Response Metadata: Finish Reason - stop
+--------------------------------------------------
+
+Process finished with exit code 0
