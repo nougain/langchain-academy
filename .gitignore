@@ -218,4 +218,4 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 /deployed/
-/RCN-NOTES.txt/
+RCN-NOTES.txt
