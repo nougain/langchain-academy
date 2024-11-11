@@ -47,7 +47,6 @@ def assistant(state: MessagesState):
 builder = StateGraph(MessagesState)
 builder.add_node("assistant", assistant)
 builder.add_node("tools", ToolNode(tools))
-
 builder.add_edge(START, "assistant")
 builder.add_conditional_edges(
     "assistant",
@@ -62,6 +61,10 @@ builder.add_edge("tools", "assistant")
 # Compile graph
 graph = builder.compile()
 
+
+#
+# This graph may be deployed without following execution steps. And then the graph can be accessed through
+#
 # Execution
 messages = [HumanMessage(content="Add 3 and 4. Multiply the output by 2. Divide the output by 5.")]
 messages = graph.invoke({"messages": messages})

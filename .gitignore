@@ -217,6 +217,14 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+# RCN 8-Nov-24
+# Added by me to ignore these from the git repository
+# If a file/directory is already in Git then you have to remove it first
+#
+# git rm --cached .\RCN-NOTES.txt
+# git rm --cached -r .\lc-academy-env\
+#
 /deployed/
 RCN-NOTES.txt
 /lc-academy-env/

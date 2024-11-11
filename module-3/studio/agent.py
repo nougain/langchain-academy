@@ -1,6 +1,5 @@
 from langchain_core.messages import SystemMessage
 from langchain_openai import ChatOpenAI
-
 from langgraph.graph import START, StateGraph, MessagesState
 from langgraph.prebuilt import tools_condition, ToolNode
 
@@ -23,7 +22,7 @@ def multiply(a: int, b: int) -> int:
     return a * b
 
 def divide(a: int, b: int) -> float:
-    """Adds a and b.
+    """Divide a and b.
 
     Args:
         a: first int
