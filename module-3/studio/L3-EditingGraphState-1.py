@@ -35,7 +35,7 @@ def divide(a: int, b: int) -> float:
     return a / b
 
 tools = [add, multiply, divide]
-llm = ChatOpenAI(model="gpt-4o",temperature=0, max_tokens=30)
+llm = ChatOpenAI(model="gpt-4o", temperature=0, max_tokens=30)
 llm_with_tools = llm.bind_tools(tools)
 
 
